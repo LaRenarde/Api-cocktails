@@ -33,19 +33,15 @@ app.get('*', (req, res) => {
 
 
 // START SERVEUR
-// db.sequelize.authenticate()
-//     .then(() => {
-//         console.log('connexion etabli avec la base de données Mysql/MariaDb')
-//     })
-//     .then (() => {
-//         app.listen(process.env.SERVER_PORT, () => {
-//         console.log('The serveur is running. Have fun !')
-//         })
-//     })
-//     .catch(err => {
-//         console.log('erreur de la connexion à la bdd :', err)
-//     })
-
+db.authenticate()
+    .then(() => {
+        console.log('connexion etabli avec la base de données Mysql/MariaDb')
+    })
+    .then (() => {
         app.listen(process.env.SERVER_PORT, () => {
         console.log('The serveur is running. Have fun !')
         })
+    })
+    .catch(err => {
+        console.log('erreur de la connexion à la bdd :', err)
+    })

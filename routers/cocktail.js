@@ -1,6 +1,9 @@
 // CHARGEMENT DES MODULES
 const express = require('express')
 
+// CHARGEMENT DU MODEL USER
+const Cocktail = require('../models/cocktail')
+
 
 // RECUPERATION DU ROUTER D EXPRESS
 var router = express.Router()

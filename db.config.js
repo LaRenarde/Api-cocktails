@@ -1,11 +1,11 @@
 const { Sequelize } = require('sequelize')
-const UserModel = require('./models/user')
+
 
 var sequelize = new Sequelize(
     process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
         host: process.env.DB_HOST,
         dialect: 'mysql',
-        logging: false,
+        logging: true,
         
         pool:{
             max: 5,
@@ -15,6 +15,6 @@ var sequelize = new Sequelize(
     }
 )
 
-const User = UserModel(sequelize, Sequelize)
+sequelize.sync()
 
-module.exports = { sequelize, User }
+module.exports = sequelize

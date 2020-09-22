@@ -1,6 +1,11 @@
 // CHARGEMENT DES MODULES
 const express = require('express')
 
+// CHARGEMENT DU MODEL NEWSLETTER 
+
+const Newsletter = require('../models/newsletter')
+
+
 
 // RECUPERATION DU ROUTER D EXPRESS
 var router = express.Router()
